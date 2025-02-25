@@ -1,34 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState(""); 
-  const [error, setError] = useState(""); 
-  const navigate = useNavigate();
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setMessage("");
-    setError("");
-
-    try {
-      const res = await axios.post("http://localhost:8002/api/auth/login", { email, password });
-      setMessage("Login successful! Redirecting...");
-      localStorage.setItem("Token", res.data.token);
-      console.log(res.data.token);
-
-      setTimeout(() => {
-        navigate("/");
-      }, 2000); // Redirect after 2 seconds
-    } catch (err) {
-      setError("Login failed! Invalid email or password.");
-    }
-  };
-
+  
   return (
     <>
     <center>
