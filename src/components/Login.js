@@ -10,7 +10,7 @@ const Login = () => {
       <div className="container">
         <div className="heading">Login</div>
 
-        <form className="form" onSubmit={handleLogin}>
+        <form className="form" >
           <input
             required
             className="input"
@@ -18,8 +18,7 @@ const Login = () => {
             name="email"
             id="email"
             placeholder="E-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+        
           />
 
           <input
@@ -29,8 +28,7 @@ const Login = () => {
             name="password"
             id="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            
           />
 
           <span className="forgot-password">
@@ -42,8 +40,6 @@ const Login = () => {
           </button>
         </form>
 
-        {message && <p style={{ color: "green" }}>{message}</p>}
-        {error && <p style={{ color: "red" }}>{error}</p>}
 
         <div className="social-account-container">
           <span className="title">Or Sign in with</span>
